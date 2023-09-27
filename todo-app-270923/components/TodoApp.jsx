@@ -6,7 +6,9 @@ const TodoApp = () => {
     const [todoList, setTodoList] = useState([])
     const [todoText, setTodoText] = useState("")
   return (
-    <div>TodoApp</div>
+    <>
+    {todoList}
+    </>
   )
 }
 
