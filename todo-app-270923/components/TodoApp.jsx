@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import TodoList from './TodoList'
 
 const TodoApp = () => {
 
@@ -13,21 +14,13 @@ const TodoApp = () => {
         setTodoText("")
     }
 
-    const showList = todoList.map((actualElement)=>{
-        return(
-            <>
-            <ul>
-                <li>{actualElement}</li>
-            </ul>
-            </>
-        )
-    })
+    
     
     return (
     <>
     <input type='text' onChange={(event)=>{setTodoText(event.target.value)}} value={todoText}></input>
     <button onClick={()=>{handleAdd()}}>enviar</button>
-    {showList}
+    <TodoList todoList={todoList}></TodoList>
     </>
   )
 }
