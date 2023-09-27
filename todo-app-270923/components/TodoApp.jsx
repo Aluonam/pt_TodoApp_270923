@@ -20,7 +20,7 @@ const TodoApp = () => {
     <>
     <input type='text' onChange={(event)=>{setTodoText(event.target.value)}} value={todoText}></input>
     <button onClick={()=>{handleAdd()}}>enviar</button>
-    <TodoList todoList={todoList}></TodoList>
+    <TodoList todoList={todoList} setTodoList={setTodoList}></TodoList>
     </>
   )
 }
