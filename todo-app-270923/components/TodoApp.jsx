@@ -7,7 +7,9 @@ const TodoApp = () => {
     const [todoText, setTodoText] = useState("")
 
     const handleAdd = ()=>{
-        setTodoList([...todoList,todoText])
+        const newArrList = structuredClone(todoList)
+        newArrList.push(todoText)
+        setTodoList(newArrList)
         setTodoText("")
     }
 
@@ -23,7 +25,6 @@ const TodoApp = () => {
     
     return (
     <>
-    {todoList}
     <input type='text' onChange={(event)=>{setTodoText(event.target.value)}} value={todoText}></input>
     <button onClick={()=>{handleAdd()}}>enviar</button>
     {showList}
